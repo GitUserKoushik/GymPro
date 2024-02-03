@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
+
 
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
