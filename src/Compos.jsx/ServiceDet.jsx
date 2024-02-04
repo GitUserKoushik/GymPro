@@ -15,7 +15,7 @@ export default function ServiceDet() {
 
 useEffect(()=>{
 dispatch(servicedet(id.id));
-},[dispatch]); 
+},[id.id]); 
 
 const {servdets} = useSelector((state)=>state.Get);
 console.log(servdets);
