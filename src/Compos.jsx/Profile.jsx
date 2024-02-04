@@ -15,7 +15,7 @@ export default function Profile() {
 
 useEffect(()=>{
 dispatch(profile(authId));  
-},[authId]);  
+},[authId,dispatch]);  
 
 
 

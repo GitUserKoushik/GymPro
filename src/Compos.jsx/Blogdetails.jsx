@@ -21,7 +21,7 @@ console.log("Paramsid",params.id);
 
 useEffect(()=>{
     dispatch(blogdet(params.id))
-},[params.id]); 
+},[params.id,dispatch]); 
 
   return (
    <div style={{marginTop:"0px"}}>
