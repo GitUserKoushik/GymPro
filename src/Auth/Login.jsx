@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Button from '@mui/material/Button';
 import { useDispatch, useSelector } from 'react-redux'
 import { logauth } from '../Redux/AuthSlice';
@@ -46,7 +46,7 @@ export default function Login() {
               }
 
    
-      const {id} = useSelector((state)=>state.Auth);
+     
 
 
       
