@@ -9,12 +9,12 @@ import Navbar from './Navbar';
 export default function Profile() {
     const dispatch = useDispatch();
     const {bookings} = useSelector((state)=>state.Serv);
-    const {id} = useSelector((state)=>state.Auth);
+    const authId = localStorage.getItem("id");
 
 
 
 useEffect(()=>{
-dispatch(profile(id));
+dispatch(profile(authId));  
 },[]);
 
 
@@ -26,7 +26,7 @@ dispatch(profile(id));
             Here are your all Bookings
         </h1>
         <h2 style={{marginLeft:"50px",marginBottom:"50px"}}>
-          Your Member ID is- {id}
+          Your Member ID is- {authId}
         </h2>
       {bookings.map((items,ind)=>{
         return(

@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import apiInstance from "./Helper";
-import { toast } from "react-toastify";
-
+import toast from "react-hot-toast";
 
 export const service = createAsyncThunk(
     "/booking",
@@ -38,14 +37,13 @@ export const ServiceSlice = createSlice({
         })
         .addCase(service.fulfilled, (state,{payload})=>{
             state.status = "idle";
-            toast.success("Booked Successfully");
+          toast.success("Booked Successfully")
             // toast.success("Courses fetched successfully")
         })
         .addCase(service.rejected, (state,action)=>{
             state.status ="rejected";
+            toast.error("Already booked or check your details")
             // state.message = action.payload.name;
-            console.log(state.message);
-            toast.error("Already booked or unknown error");
         })
         .addCase(profile.pending, (state,action)=>{
             state.status = "loading";
@@ -53,6 +51,7 @@ export const ServiceSlice = createSlice({
         .addCase(profile.fulfilled, (state,{payload})=>{
             state.status = "idle";
             state.bookings = payload.result;
+            toast.success("All Bookings")
             // toast.success("Courses fetched successfully")
         })
         .addCase(profile.rejected, (state,action)=>{

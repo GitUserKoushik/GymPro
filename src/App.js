@@ -10,7 +10,7 @@ import Member from './Compos.jsx/Member';
 import Profile from './Compos.jsx/Profile';
 import ServiceDet from './Compos.jsx/ServiceDet';
 import { Suspense,lazy } from 'react';
-
+import { Toaster } from 'react-hot-toast';
 
 
 
@@ -19,7 +19,7 @@ function App() {
   function PrivateRoute ({children}){
     const token = localStorage.getItem("token") || sessionStorage.getItem("token");
     
-    return token!== null && token!== undefined? (
+    return token!== null && token!== undefined && token!=="" ? (
       children):
       (
         <>
@@ -79,7 +79,7 @@ function App() {
     <div className="App">
       <Suspense  fallback={<h2> Loading....</h2>}>
         <Router>
-          
+          <Toaster/>
           <Routes>
 
             {PublicRouteNames?.map((route,index)=>{

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import apiInstance from "./Helper"
-import { toast } from "react-toastify";
+import toast, { Toaster } from 'react-hot-toast';
 
 
 
@@ -42,7 +42,7 @@ export const AuthSlice = createSlice({
          console.log("pending");
         })
         .addCase(regauth.fulfilled,(state,{payload})=>{
-            toast.success("Registered successfully");
+           toast.success("Registered Successfully");
             state.reg= payload.token;
         })
         .addCase(regauth.rejected,(state,action)=>{
@@ -52,7 +52,8 @@ export const AuthSlice = createSlice({
             console.log("pending");
            })
            .addCase(logauth.fulfilled,(state,{payload})=>{
-            toast.success("Login successfully");
+            toast.success("Logged in Successfully");
+           
             if(payload.token&&payload.data._id){
                 localStorage.setItem("token",payload.token);
                 localStorage.setItem("id",payload.data._id);
@@ -64,6 +65,7 @@ export const AuthSlice = createSlice({
            })
            .addCase(logauth.rejected,(state,action)=>{
                console.log("rejected");
+               toast.error("Error: Check your credentials")
            })
 
     }

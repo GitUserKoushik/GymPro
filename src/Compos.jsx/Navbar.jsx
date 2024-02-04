@@ -2,8 +2,8 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Button from '@mui/material/Button';
-import { toast } from 'react-toastify';
 import { logout } from '../Redux/AuthSlice';
+import toast from 'react-hot-toast';
 
 
 
@@ -20,9 +20,10 @@ const logoutt=()=>{
   dispatch(logout());
   localStorage.removeItem("token");
   localStorage.removeItem("id");
+  toast.success("Logged out Successfully");
   
   navigate('/login');
-  toast.success("Logout Success")
+
 }
 
 const toReg = ()=>{
@@ -65,13 +66,13 @@ const toLog = ()=>{
 
         
          <div style={{marginTop:"05px"}}>
-          {log? <Button style={{borderRadius:"8px"}}  onClick={logoutt} variant='contained' color='error'>
+          {auth? <Button style={{borderRadius:"8px"}}  onClick={logoutt} variant='contained' color='error'>
         Logout
         </Button>:
         <Button style={{borderRadius:"8px"}} variant='contained' onClick={toLog} color='error'  >
         Login
         </Button>}
-         </div>
+         </div> 
 
        
        
