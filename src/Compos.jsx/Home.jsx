@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Carousel from 'react-material-ui-carousel';
 import { banner } from '../Redux/GetSlice';
 import { useEffect } from 'react';
@@ -11,10 +11,9 @@ import { testm } from '../Redux/GetSlice';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Footer from './Footer';
 import Navbar from './Navbar';
 
@@ -35,19 +34,19 @@ export default function Home() {
 
 useEffect(()=>{
 dispatch(banner());
-},[]);
+},[dispatch]);
 
 useEffect(()=>{
   dispatch(trainers());
-  },[]);
+  },[dispatch]);
 
   useEffect(()=>{
     dispatch(service());
-    },[]);
+    },[dispatch]);
 
     useEffect(()=>{
       dispatch(testm());
-      },[]);
+      },[dispatch]);
 
 const toDet = (id)=>{
 navigate(`/serdet/${id}`);
@@ -72,7 +71,7 @@ navigate(`/serdet/${id}`);
                     position: 'relative',
                 }}
             >
-                <img src={produc(mm.image)} style={{height: '100vh', width: '100%'}} />
+                <img src={produc(mm.image)} alt='' style={{height: '100vh', width: '100%'}} />
                 <h1 style={{zIndex:5, position: 'absolute', bottom: "450px",left:15, color:"white"}}>{mm.title}</h1>
                 <h1 style={{zIndex:5, position: 'absolute', bottom:"400px",left:15, color:"white"}}>{mm.subtitle}</h1>
             </Box>

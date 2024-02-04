@@ -2,14 +2,13 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { blogs } from '../Redux/BlogSlice'
 import { produc } from '../Redux/Helper';
-import { Box, Paper,Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Link, useNavigate } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 import Footer from './Footer';
 import Navbar from './Navbar';
 
@@ -26,7 +25,7 @@ const dispatch = useDispatch();
 
 useEffect(()=>{
     dispatch(blogs());
-},[])
+},[dispatch])
 
 
     const {items} = useSelector((state)=>state.Blog);

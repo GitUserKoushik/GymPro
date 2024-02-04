@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch,} from 'react-redux'
 import Button from '@mui/material/Button';
 import { logout } from '../Redux/AuthSlice';
 import toast from 'react-hot-toast';
@@ -14,7 +14,6 @@ export default function Navbar() {
 
   const auth = localStorage.getItem("token");
 
-const {log} = useSelector((state)=>state.Auth);
 
 const logoutt=()=>{
   dispatch(logout());

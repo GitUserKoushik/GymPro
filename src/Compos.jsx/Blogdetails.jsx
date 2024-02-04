@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { blogs } from '../Redux/BlogSlice'
 import { produc } from '../Redux/Helper';
-import { Link } from 'react-router-dom';
 import { blogdet } from '../Redux/BlogSlice';
 import { useParams } from 'react-router-dom';
-import { Box, Paper,Grid } from '@mui/material'
+import { Paper } from '@mui/material'
 import Footer from './Footer';
 import Navbar from './Navbar';
 
@@ -23,7 +21,7 @@ console.log("Paramsid",params.id);
 
 useEffect(()=>{
     dispatch(blogdet(params.id))
-},[])
+},[dispatch])
 
   return (
    <div style={{marginTop:"0px"}}>

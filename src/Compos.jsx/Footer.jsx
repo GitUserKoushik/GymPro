@@ -3,6 +3,7 @@ import React from 'react'
 import footer from "./Footer.css"
 
 export default function Footer() {
+  console.log(footer); 
   return (
     <div>
     <div id="belowfoot">

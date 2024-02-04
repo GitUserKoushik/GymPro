@@ -3,13 +3,12 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from './Compos.jsx/Home';
 import Regitser from './Auth/Regitser';
 import Login from './Auth/Login';
-import Navbar from './Compos.jsx/Navbar';
 import Allblog from './Compos.jsx/Allblog';
 import Blogdetails from './Compos.jsx/Blogdetails';
 import Member from './Compos.jsx/Member';
 import Profile from './Compos.jsx/Profile';
 import ServiceDet from './Compos.jsx/ServiceDet';
-import { Suspense,lazy } from 'react';
+import { Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
 
 

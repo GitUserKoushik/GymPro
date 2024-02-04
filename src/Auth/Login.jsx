@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 
 import {
-    Container,
+   
     Grid,
     Paper,
     TextField,
@@ -19,7 +19,6 @@ import {
 
 export default function Login() {
 
-  const [iddd,setIddd]= useState("");
 
   const {log} = useSelector((state)=>state.Auth);
 
@@ -52,9 +51,7 @@ export default function Login() {
 
       
 
-      const idd = ()=>{
-        setIddd(id);
-      }
+      
 
 
   return (

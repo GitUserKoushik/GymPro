@@ -1,7 +1,5 @@
 import React from 'react'
 import { Button, Container, Grid, TextField, Paper} from "@mui/material";
-import axios from 'axios';
-import { useParams } from 'react-router-dom'
 import { service } from '../Redux/ServiceSlice';
 
 import { useForm } from "react-hook-form";

@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import { regauth } from '../Redux/AuthSlice';
-import { styled } from '@mui/material/styles';
 import { useForm } from "react-hook-form";
-import { produc } from '../Redux/Helper';
 import { Link, useNavigate } from 'react-router-dom'
 
 
