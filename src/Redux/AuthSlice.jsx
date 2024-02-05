@@ -40,6 +40,7 @@ export const AuthSlice = createSlice({
         builder
         .addCase(regauth.pending, (state,action)=>{
          console.log("pending");
+         toast.error("Wait a bit")
         })
         .addCase(regauth.fulfilled,(state,{payload})=>{
            toast.success("Registered Successfully");
@@ -50,9 +51,14 @@ export const AuthSlice = createSlice({
         })
         .addCase(logauth.pending, (state,action)=>{
             console.log("pending");
+         toast.loading("Wait a bit",{duration:2000});
+
            })
            .addCase(logauth.fulfilled,(state,{payload})=>{
             toast.success("Logged in Successfully");
+            toast.success("Go to Bookings for Member ID",{duration:5000});
+
+            
            
             if(payload.token&&payload.data._id){
                 localStorage.setItem("token",payload.token);

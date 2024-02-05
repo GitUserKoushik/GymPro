@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import apiInstance from "./Helper";
+import toast from "react-hot-toast";
 
 export const banner = createAsyncThunk(
     "/getbanner",
@@ -65,6 +66,7 @@ export const GetSlice = createSlice({
             
         })
         .addCase(banner.rejected, (state,action)=>{
+            toast.error("Unknown error, try again later")
             
         })
         .addCase(trainers.pending, (state,action)=>{

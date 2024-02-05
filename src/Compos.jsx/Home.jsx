@@ -93,7 +93,7 @@ navigate(`/serdet/${id}`);
       <Grid style={{marginLeft:"20px"}} item xs={2} sm={2} md={2} >
 
         <Paper variant='elevation' elevation={10} style={{alignContent:"center",borderRadius:"15px"}}>
-        <img src={produc(items.image)}  style={{height:"180px",width:"230px",borderRadius:"15px",alignSelf:"center"}} alt="" />
+        <img src={produc(items.image)}  style={{height:"180px",width:"231px",borderRadius:"15px",alignSelf:"center"}} alt="" />
         <h2 style={{padding:"15px",color:"red"}}>
           {items.name} 
         </h2>
@@ -103,6 +103,9 @@ navigate(`/serdet/${id}`);
         <h4 style={{padding:"15px"}}>
          EXP- {items.experience}
         </h4>
+        <p style={{paddingLeft:"12px",paddingBottom:"10px",fontSize:"13px"}}>
+         ID- {items._id}
+        </p>
         </Paper>
       
        
@@ -170,8 +173,8 @@ navigate(`/serdet/${id}`);
   {Array.isArray(testimonials)&& testimonials.map((items)=>{
     return (
       <Grid style={{marginLeft:"30px"}} item xs={3} sm={4} md={4} >
-      <Card style={{marginBottom:"30px",borderRadius:"20px"}} elevation={10} sx={{ maxWidth: 370 }}>
-      <img src={produc(items.image)} style={{height:"300px",marginLeft:"40px"}} alt="" />
+      <Card style={{marginBottom:"30px",borderRadius:"20px"}} elevation={10} sx={{ maxWidth: 350 }}>
+      <img src={produc(items.image)} style={{height:"200px",marginLeft:"70px"}} alt="" />
       <CardContent>
         <Typography gutterBottom variant="h4" component="div">
           {items.client_name}
@@ -183,10 +186,10 @@ navigate(`/serdet/${id}`);
 {Array.isArray(items.service_details)&& items.service_details.map((data)=>{
   return(
     <>
-    <Typography variant="h6" color="grey">
+    <Typography variant="body1" color="grey">
           Service Purchased - {data.service_name}
         </Typography >
-        <Typography variant="h6" color="grey">
+        <Typography variant="body1" color="grey">
          Service ID - {data._id}
         </Typography>
        

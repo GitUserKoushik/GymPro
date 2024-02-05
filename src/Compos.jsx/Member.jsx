@@ -46,7 +46,7 @@ const dispatch = useDispatch();
     <Container style={{}}>
       <h1 style={{textAlign:"center"}}>Service Booking</h1>
       <form onSubmit={handleSubmit(Loginacc)} style={{marginLeft:"120px"}}>
-      <Paper elevation={5}   sx={{ padding: 5 }}style={{marginTop:"80px",marginBottom:"200px",marginRight:"130px",border:"1px solid grey",borderRadius:"15px"}}>
+      <Paper elevation={5}   sx={{ padding: 5 }}style={{marginTop:"80px",marginBottom:"200px",marginRight:"130px",border:"0px solid grey",borderRadius:"15px"}}>
         <Grid container maxWidth={1100} spacing={2}>
             
         

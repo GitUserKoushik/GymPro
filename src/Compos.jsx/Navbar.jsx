@@ -77,7 +77,7 @@ const toLog = ()=>{
        
 
 
-        <Button style={{borderRadius:"10px",border:"2px solid red"}} variant='outlined' color='error' onClick={toReg}>
+        <Button style={{borderRadius:"10px",border:"2px solid red",height:"37.5px",marginTop:"5px"}} variant='outlined' color='error' onClick={toReg}>
         Register
         </Button>
         </div>

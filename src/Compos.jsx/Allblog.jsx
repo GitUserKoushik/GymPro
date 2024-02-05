@@ -57,7 +57,7 @@ navigate(`/blogdet/${id}`);
 
         </CardContent>
       <CardActions>
-        <Button style={{borderRadius:"10px",marginBottom:"15px",marginLeft:"10px",border:"1px solid red"}} variant='outlined' color='error' onClick={()=>toDet(items._id)} >Blog Details</Button>
+        <Button style={{borderRadius:"10px",marginBottom:"15px",marginLeft:"10px",border:"1.5px solid red"}} variant='outlined' color='error' onClick={()=>toDet(items._id)} >Blog Details</Button>
        
       </CardActions>
     </Card>

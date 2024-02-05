@@ -35,7 +35,7 @@ console.log(servdets);
         <h1>
             {servdets.service_name}
         </h1>
-        <img src={produc(servdets.image)} style={{height:"300px",width:"80%",marginLeft:"110px",borderRadius:"20px"}} alt="" />
+        <img src={produc(servdets.image)} style={{height:"500px",width:"80%",marginLeft:"110px",borderRadius:"20px"}} alt="" />
         <p>
             {servdets.service_description}
         </p>

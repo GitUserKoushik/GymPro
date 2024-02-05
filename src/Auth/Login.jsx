@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from '@mui/material/Button';
 import { useDispatch, useSelector } from 'react-redux'
 import { logauth } from '../Redux/AuthSlice';
@@ -14,13 +14,19 @@ import {
     Typography,
   } from "@mui/material";
   import { useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
+import Navbar from '../Compos.jsx/Navbar';
 
  
 
 export default function Login() {
 
 
+
+
+
   const {log} = useSelector((state)=>state.Auth);
+  const auth = localStorage.getItem("token");
 
     const {
         register,
@@ -46,17 +52,25 @@ export default function Login() {
               }
 
    
-     
+     if(log || auth){
 
 
-      
-
-      
 
 
-  return (
-    <>
-    <h2 style={{textAlign:"center"}}>
+return(
+<>
+<Navbar/>
+<h2 style={{textAlign:"center"}}>
+  You are already logged in, if you wish to login to another account then please logout first!
+</h2>
+
+</>
+      )
+     }
+     else{
+      return(
+        <div>
+      <h2 style={{textAlign:"center"}}>
       Login to access MemberOnly Services
     </h2>
        
@@ -124,10 +138,16 @@ export default function Login() {
 Go to Home
 </Link>
       
-     
-    
+      
+      </div>
+      )
+     }
 
 
-    </>
-  )
+      
+
+      
+
+
+
 }

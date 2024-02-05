@@ -23,6 +23,7 @@ function App() {
       (
         <>
         <Navigate to="/login" />
+       
         </>
       )
     
@@ -78,7 +79,7 @@ function App() {
     <div className="App">
       <Suspense  fallback={<h2> Loading....</h2>}>
         <Router>
-          <Toaster/>
+          <Toaster reverseOrder={false} position='top-center' />
           <Routes>
 
             {PublicRouteNames?.map((route,index)=>{

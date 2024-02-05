@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import apiInstance from "./Helper";
+import toast from "react-hot-toast";
 
 
 export const blogs = createAsyncThunk(
@@ -41,6 +42,7 @@ export const blogs = createAsyncThunk(
             .addCase(blogs.fulfilled, (state,{payload})=>{
                 state.status = "idle";
                 console.log("idle");
+                
                 // toast.success("Blogs fetched successfully")
                 state.items = payload.data;
                 console.log(payload.data);
@@ -49,6 +51,7 @@ export const blogs = createAsyncThunk(
             .addCase(blogs.rejected, (state,action)=>{
                 state.status = "loading";
                 console.log("rejected");
+                toast.error("Unknown Error, try again later");
             })
             .addCase(blogdet.pending, (state,action)=>{
                 state.status = "loading";
@@ -65,6 +68,7 @@ export const blogs = createAsyncThunk(
             .addCase(blogdet.rejected, (state,action)=>{
                 state.status = "loading";
                 console.log("rejected");
+                toast.error("Unknown Error, try again later");
             })
            
         }

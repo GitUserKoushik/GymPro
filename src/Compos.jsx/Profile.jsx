@@ -2,9 +2,12 @@ import React, { useEffect } from 'react'
 import { profile } from '../Redux/ServiceSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { produc } from '../Redux/Helper';
-import { Paper } from '@mui/material';
+import { Grid } from '@mui/material';
 import Footer from './Footer';
 import Navbar from './Navbar';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
 
 export default function Profile() {
     const dispatch = useDispatch();
@@ -28,11 +31,13 @@ dispatch(profile(authId));
         <h2 style={{marginLeft:"50px",marginBottom:"50px"}}>
           Your Member ID is- {authId}
         </h2>
+        <Grid container spacing={{ xs: 1, md: 1 }} columns={{ xs: 4, sm: 4, md: 13 }}>
+
       {bookings.map((items,ind)=>{
         return(
 <>
 
-<Paper variant='elevation' elevation={10} style={{borderRadius:"20px",width:"90%",margin:"auto",padding:"20px",marginTop:"20px",marginBottom:"50px"}}>
+{/* <Paper variant='elevation' elevation={10} style={{borderRadius:"20px",width:"90%",margin:"auto",padding:"20px",marginTop:"20px",marginBottom:"50px"}}>
         <h1>
           {ind+1}  {items.serviceId.service_name}
         </h1>
@@ -53,7 +58,41 @@ dispatch(profile(authId));
            Trainer ID- {items.serviceId.trainerId}
         </h4>
       
-    </Paper>
+    </Paper> */}
+
+
+ 
+      <Grid style={{marginLeft:"30px"}} item xs={3} sm={4} md={4} >
+      <Card style={{marginBottom:"30px",borderRadius:"20px"}}  elevation={10} sx={{ maxWidth: 370 }}>
+      <img src={produc(items.serviceId.image)} style={{height:"300px"}} alt="" />
+      <CardContent>
+        <Typography gutterBottom variant="h4" component="div">
+          {items.serviceId.service_name}
+        </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+          Scheme: {items.scheme }
+        </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+          Price: {items.price}
+        </Typography>
+        <Typography gutterBottom variant="body1" component="div">
+          Service ID: {items.serviceId._id}
+        </Typography>
+        <Typography gutterBottom variant="body1" component="div">
+          Trainer ID: {items.serviceId.trainerId}
+        </Typography>
+
+
+
+        
+
+
+      </CardContent>
+     
+    </Card>
+    </Grid>
+    
+  
 
 
 
@@ -61,6 +100,7 @@ dispatch(profile(authId));
 
         )
       })}
+       </Grid>
       <Footer/>
     </div>
   )
